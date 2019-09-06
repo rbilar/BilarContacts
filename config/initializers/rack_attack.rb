@@ -4,7 +4,7 @@ class Rack::Attack
 
   # Allow all local traffic
   safelist('allow-localhost') do |req|
-    req.ip = '127.0.0.1' || req.ip == '::1'
+    req.ip == '127.0.0.1' || req.ip == '::1'
   end
 
   # Allow an IP address to make 5 requests every 5 seconds
